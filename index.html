@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>¿Quieres ser mi San Valentín? ❤️</title>
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #ff758c, #ff7eb3);
+      font-family: 'Arial', sans-serif;
+      color: white;
+      text-align: center;
+      overflow-x: hidden;
+    }
+
+    h1 {
+      margin-top: 30px;
+      font-size: 2.4em;
+    }
+
+    p {
+      font-size: 1.3em;
+      margin: 15px 25px;
+    }
+
+    .timer {
+      font-size: 1.4em;
+      margin: 20px 0;
+      font-weight: bold;
+    }
+
+    img {
+      width: 80%;
+      max-width: 350px;
+      border-radius: 20px;
+      margin: 25px 0;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    }
+
+    button {
+      background: white;
+      color: #ff4d6d;
+      border: none;
+      padding: 15px 30px;
+      font-size: 1.2em;
+      border-radius: 30px;
+      cursor: pointer;
+      margin-top: 20px;
+      transition: transform 0.2s;
+    }
+
+    button:hover {
+      transform: scale(1.05);
+    }
+
+    .secret {
+      display: none;
+      font-size: 1.4em;
+      margin: 30px;
+      font-weight: bold;
+    }
+
+    .heart {
+      position: fixed;
+      bottom: -10px;
+      color: rgba(255,255,255,0.8);
+      font-size: 20px;
+      animation: float 6s linear infinite;
+    }
+
+    @keyframes float {
+      from {
+        transform: translateY(0);
+        opacity: 1;
+      }
+      to {
+        transform: translateY(-100vh);
+        opacity: 0;
+      }
+    }
+
+    iframe {
+      margin-top: 20px;
+      border-radius: 12px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>💖 ¿Quieres ser mi cita de San Valentín? 💖</h1>
+
+  <p>
+    Desde que llegaste a mi vida,<br>
+    todo tiene más sentido ✨
+  </p>
+
+  <div class="timer">
+    ⏳ Llevamos juntos:<br>
+    ❤️ 4 años, 8 meses y 9 días ❤️
+  </div>
+
+  <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e"
+       alt="Unión de dos personas">
+
+  <!-- 🎵 Música -->
+  <p>🎶 Nuestra canción 🎶</p>
+  <iframe width="300" height="170"
+    src="https://www.youtube.com/embed/7Qp5vcuMIlk?autoplay=1&mute=1"
+    allow="autoplay; encrypted-media"
+    allowfullscreen>
+  </iframe>
+
+  <br>
+
+  <!-- 💍 Botón -->
+  <button onclick="showSecret()">💍 Sí acepto 💍</button>
+
+  <!-- 💌 Mensaje secreto -->
+  <div class="secret" id="secret">
+    💌 Te amo, hoy, mañana y siempre,<br>
+    por más que el destino sea otro. ❤️
+  </div>
+
+  <script>
+    function showSecret() {
+      document.getElementById("secret").style.display = "block";
+    }
+
+    // ❤️ Corazones flotando
+    function createHeart() {
+      const heart = document.createElement("div");
+      heart.className = "heart";
+      heart.innerHTML = "❤️";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.fontSize = (15 + Math.random() * 25) + "px";
+      heart.style.animationDuration = (4 + Math.random() * 4) + "s";
+      document.body.appendChild(heart);
+
+      setTimeout(() => {
+        heart.remove();
+      }, 6000);
+    }
+
+    setInterval(createHeart, 300);
+  </script>
+
+</body>
+</html>
